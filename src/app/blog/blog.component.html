@@ -1,0 +1,13 @@
+
+<h2>Blog</h2>
+
+<ul class="blog">
+  <li [class.selected]="blog === selectedBlog" *ngFor="let blog of blogs" (click)="onSelect(blog)">
+    <a routerLink='/blog/detail/{{blog.id}}'>
+      <span class="badge">{{blog.id}}</span>
+      {{blog.title}}
+    </a>
+  </li>
+</ul>
+
+ 
