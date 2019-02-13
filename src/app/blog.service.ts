@@ -8,7 +8,9 @@ import { HttpClient, HttpHeaders } from '@angular/common/http'
   providedIn: 'root'
 })
 export class BlogService {
-  private blogUrl = 'http://localhost:3000/blog';
+  // private blogUrl = 'http://localhost:3000/blog';
+  private blogUrl = 'http://localhost:8000/api/blog/';
+  
 
   constructor(private http: HttpClient) { }
   
