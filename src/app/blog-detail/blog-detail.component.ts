@@ -24,6 +24,7 @@ export class BlogDetailComponent implements OnInit {
 
   ngOnInit() {
     this.getBlog ();
+    this.getComments ();
   }
 
   getBlog() : void {

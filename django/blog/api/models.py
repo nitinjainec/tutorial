@@ -11,10 +11,10 @@ class Post(models.Model):
         return self.title
 
 
-class Comment(models.Model):
+class IComment(models.Model):
     post = models.ForeignKey(Post, on_delete=models.CASCADE)
-    comment = models.CharField(max_length=255, default='SOME STRING')
+    icomment = models.CharField(max_length=255, default='SOME STRING')
     def __str__(self):
-        return self.comment
+        return self.icomment
 
 

@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Post, Comment
+from .models import Post, IComment
 
 
 class PostSerializer(serializers.ModelSerializer):
@@ -10,6 +10,6 @@ class PostSerializer(serializers.ModelSerializer):
 
 class CommentSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Comment
+        model = IComment
         fields = '__all__'
 
