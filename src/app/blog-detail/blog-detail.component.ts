@@ -14,6 +14,7 @@ import { BlogService } from '../blog.service'
 })
 export class BlogDetailComponent implements OnInit {
   @Input() blog : Blog
+  comments : Comment []
 
   constructor(
     private route: ActivatedRoute,
@@ -35,6 +36,13 @@ export class BlogDetailComponent implements OnInit {
         }
       }
     )
+  }
+
+  getComments() : void {
+    const id = +this.route.snapshot.paramMap.get('id');
+    this.blogService.getComments(id).subscribe(
+      comments => this.comments = comments
+    );
   }
 
   goBack(): void {

@@ -17,4 +17,9 @@ export class BlogService {
   getBlogs(): Observable<Blog[]> {
     return this.http.get<Blog[]>(this.blogUrl)
   }
+
+  getComments(blog: number): Observable<Comment[]> {
+    let blogUrl = 'http://localhost:8000/api/comment/' + blog;
+    return this.http.get<Comment[]>(blogUrl)
+  }
 }

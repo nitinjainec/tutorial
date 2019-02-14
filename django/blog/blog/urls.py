@@ -15,10 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from api.views import PostAPIView, PostAPIURDView
+from api.views import PostAPIView, PostAPIURDView, CommentAPIURDView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/blog/', PostAPIView.as_view(), name='api-post-list'),
     path('api/blog/<int:pk>', PostAPIURDView.as_view(), name='api-post-urd'),
+    path('api/comment/<int:pk>', CommentAPIURDView.as_view(), name='api-comment-list'),
 ]

@@ -8,8 +8,23 @@
   </div>
   <h4>Description:</h4>
   {{blog.post}}
+
+  <ul class="blog">
+    <li [class.selected]="blog === selectedBlog" *ngFor="let blog of blogs" (click)="onSelect(blog)">
+      <a routerLink='/blog/detail/{{blog.id}}'>
+        <span class="badge">{{blog.id}}</span>
+        {{blog.title}}
+      </a>
+    </li>
+  </ul>
+
+  <ul>
+    <li  *ngFor="let comment of comments">        
+        {{ comment.comment }}
+    </li>
+  </ul>
+
   <div class='btn'>
     <button (click)="goBack()">Back</button>
+  </div>
 </div>
-</div>
-  
